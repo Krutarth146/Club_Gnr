@@ -87,3 +87,20 @@ if factors == 2:
     print("Prime Number")
 
 # 1 to 10000 (Prime , Perfect Numbers, Palindrome, Armstrong, Twin)
+
+
+# Fibonnaccii
+
+
+n1,n2 = 0,1
+
+print(n1,n2,sep=' ',end=' ')
+
+i=1
+while i<=3:
+    n3 = n1 + n2
+    print(n3,end=' ')
+    n1 = n2
+    n2 = n3
+
+    i+=1
