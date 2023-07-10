@@ -68,4 +68,25 @@ print()
 
 
 
+# Prime Number
 
+# 23 ----> 1,23
+# 29 ----> 1,29
+# 24 ----> 1,2,3,4,6,8,12,24
+# 44 ----> 1,2,4,11,22,44
+
+
+num = 114
+counter = 0
+
+for i in range(1,num+1):
+    if num % i == 0:  # 1 2 31 62
+        print(i) # 
+        counter+=1
+
+print(counter)
+
+if counter == 2:
+    print("Prime Number")
+else:
+    print("Not Prime")
