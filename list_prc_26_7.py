@@ -35,14 +35,14 @@ list1 = [[10,20,30],
          [40,66,22],
          [90,78,67]]
  
-for row in range(len(list1)):
+for row in range(len(list1)):   # 3  ---> 0,1,2    # row = 0
 
-    if row % 2 == 0:
-        for col in range(len(list1[row])):
-            print(list1[row][col],end=' ')
+    if row % 2 == 0:   # 0 and 2
+        for col in range(len(list1[row])):   # 3  ---> 0,1,2   # col = 0
+            print(list1[row][col],end=' ')  # list1[0][1]  # 10 20 30   90 78 67
     
-    else:
-        for col in range(len(list1[row])-1, -1, -1):
-            print(list1[row][col], end=' ')
+    else:   # 1
+        for col in range(len(list1[row])-1, -1, -1):  # 2 to 0
+            print(list1[row][col], end=' ')   # list1[1][2]  # 22
 
     print()
