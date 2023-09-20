@@ -111,3 +111,18 @@ def Agni(aman):
     return aman()
 
 Agni(Harit)
+
+
+l1 = [[10,20],[30,90]]
+
+l2 = l1[:]
+
+print(id(l1))
+print(id(l2))
+
+l2.append(900)
+l2[1][0] = 33
+
+l2[1] = 93
+
+print(l1)
