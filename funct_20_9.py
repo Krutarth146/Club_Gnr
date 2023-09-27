@@ -66,16 +66,16 @@ def Apollo(ceat):
         return 'Jk is Best'[::-1]
     return Jktyre()
 
-@Apollo
-def ceat1():
-    print('Aman')
+# @Apollo
+# def ceat1():
+#     print('Aman')
 
-@Apollo
-def tvs():
-    print('tvs')
+# @Apollo
+# def tvs():
+#     print('tvs')
 
-# x = Apollo(ceat1)
-# print(x)
+x = Apollo(ceat1)
+print(x)
 
 @classmethod
 
