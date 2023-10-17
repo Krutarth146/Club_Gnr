@@ -64,3 +64,8 @@ print(21 + 89)  # 110
 print(21 + 89.89)  # 110.89
 print(21 + True)  # 22
 print(21 + False)  # 21
+
+
+import dict_set_17_10
+
+# print(dict_set_17_10.Dev(10,90))   # 110
