@@ -11,7 +11,7 @@ print(start)
 
 
 
-dev = [list(set([v for subtup in list1 if subtup[0] == k for v in subtup])) for k in start]
+dev = [list({v for subtup in list1 if subtup[0] == k for v in subtup}) for k in start]
 print(dev)   # [[90, 5, 6, 7], [9, 5, 6]]
 
 
