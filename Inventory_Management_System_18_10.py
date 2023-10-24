@@ -12,11 +12,12 @@ x = f1.read()
 record = json.loads(x)
 f1.close()
 
-# print(record)
-# print(record['1003'])
-# print(record['1003']['qn'])   # 55
-# print(record['1003']['pname'][-2])   # t
-# print(record['1003']['pname'][1:])   # ats
+print(record)
+print(record.get('1003'))
+print(record['1003'])
+print(record['1003']['qn'])   # 55
+print(record['1003']['pname'][-2])   # t
+print(record['1003']['pname'][1:])   # ats
 
 print('Menu'.center(40,'-'))
 
@@ -33,9 +34,14 @@ p_choice = input('Enter PId: ')
 
 try: 
     if p_choice not in record:
-        raise ValueError
+        raise ValueError(p_choice)
+    
+except ValueError as v:
+    print("Value Error Occured and Handled",v)
+    exit()
+
 except Exception as e:
-    print('Please Enter Valid Choice')
+    print('Please Enter Valid Choice',e)
     exit()
 
 user_need = int(input("Enter Quantity: "))
@@ -61,14 +67,14 @@ else:
     print("Thank You...")
     exit()
 
-print(record)   # Dict
+# print(record)   # Dict
 
 
 # JSON ----> Javascript Object Notation
 
 record_data = json.dumps(record)   # String
 # print(record_data)
-# print(type(record_data))
+# print(type(record_data))   # str
 
 fp = open('inventory.txt','w')   # Overwrite
 
