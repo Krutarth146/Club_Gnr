@@ -134,3 +134,39 @@ if len(set(str2.lower())) == 27:
 # Set Comprehension
 vowels = "aeiou"
 
+
+
+grid = [
+"eibjbwsp",
+"ptfxehaq",
+"jxipvfga",
+"rkefiyub",
+"kalwfhfj",
+"lktajiaq",
+"srdgoros",
+"nflvjznh",
+]
+
+def gridChallenge(grid):
+    for substr in range(len(grid)):
+        l1 = list(grid[substr])
+        l1.sort()
+        str1 = ''.join(l1)
+        grid[substr] = str1
+
+    # grid.sort()
+
+    print(grid)
+    
+
+    for i in range(len(grid[0])-1):   # 0,1
+        for j in range(len(grid)-1): # 0,1,2
+            # print(j,i , '>' , j+1,i) # 2,0 > 3,0
+            if grid[j][i] > grid[j+1][i]:   
+                print(grid[j][i])
+                return "NO"
+        
+    return "YES"
+
+    
+print(gridChallenge(grid))
