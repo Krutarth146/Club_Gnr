@@ -1,1 +1,1 @@
-[{"Name": "dvdfvdfvdfv", "Email": "a@gmail.com", "Password": "12345678"}][{"Name": "Amanaaa", "Email": "u@gmail.com", "Password": "scsdcsdcscs"}]
+[][{"Name": "Ashok", "Email": "a@gmail.com", "Password": "12345678"}][{"Name": "Ashok", "Email": "a@gmail.com", "Password": "12345678"}, {"Name": "Palak", "Email": "p@gmail.com", "Password": "12345678"}]
