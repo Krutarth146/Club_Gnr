@@ -33,7 +33,7 @@ except FileNotFoundError:
 import logging
 
 logging.basicConfig(filename="Error.log",
-                    format='%(asctime)s %(message)s',
+                    format='%(asctime)s %(levelname)s %(message)s',
                     filemode='a')
 
 def Series(num):
@@ -49,6 +49,10 @@ def Series(num):
     # except Exception as err:
         # logging.exception(err)
 
+logger = logging.getLogger()
+logger.warn("This is Warning")
+logger.error("This is Warning")
+logger.critical("This is Warning")
 x = Series(10)
 print(next(x))  # 1
 print(next(x))  # 2
