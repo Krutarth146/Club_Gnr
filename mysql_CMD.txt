@@ -1,0 +1,304 @@
+Microsoft Windows [Version 10.0.22621.2506]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\KRUTARTH>mysql --version
+mysql  Ver 8.0.33 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\KRUTARTH>mysql --version
+mysql  Ver 8.0.33 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\KRUTARTH>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.33 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| club6              |
+| db1                |
+| dktv               |
+| friendly_movies    |
+| gen                |
+| information_schema |
+| krutarth           |
+| mysql              |
+| performance_schema |
+| shilp              |
+| shilp1             |
+| sys                |
++--------------------+
+12 rows in set (0.22 sec)
+
+mysql> create database club;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| club               |
+| club6              |
+| db1                |
+| dktv               |
+| friendly_movies    |
+| gen                |
+| information_schema |
+| krutarth           |
+| mysql              |
+| performance_schema |
+| shilp              |
+| shilp1             |
+| sys                |
++--------------------+
+13 rows in set (0.00 sec)
+
+mysql> use club;
+Database changed
+mysql> show tables;
+Empty set (0.02 sec)
+
+mysql> create table demo1 (id int, Name varchar(30), roll int);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_club |
++----------------+
+| demo1          |
++----------------+
+1 row in set (0.01 sec)
+
+mysql> desc demo1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| Name  | varchar(30) | YES  |     | NULL    |       |
+| roll  | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> create table demo1 (id int, Name varchar(30), roll int);
+ERROR 1050 (42S01): Table 'demo1' already exists
+mysql> create table if not exists demo1 (id int, Name varchar(30), roll int);
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> insert into demo1 (id, roll, Name) values (10, 90, 'Agni');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into demo1 (id, roll, Name) values (10, 90, 'Agni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into demo1 (id, roll, Name) values (10, 90, 'Agni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into demo1 (id, roll, Name) values (10, 90, 'Agni');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from demo1;
++------+------+------+
+| id   | Name | roll |
++------+------+------+
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
++------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> insert into demo1 values (10, 'Agni', 90);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo1;
++------+------+------+
+| id   | Name | roll |
++------+------+------+
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
++------+------+------+
+5 rows in set (0.00 sec)
+
+mysql> insert into demo1 values (10, 'Agni', 90);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into demo1 values (10, 'Agni');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into demo1 (id, Name) values (10, 'Agni');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo1;
++------+------+------+
+| id   | Name | roll |
++------+------+------+
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni |   90 |
+|   10 | Agni | NULL |
++------+------+------+
+7 rows in set (0.00 sec)
+
+mysql> Not null, unique
+    ->
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Not null, unique' at line 1
+mysql> ;
+ERROR:
+No query specified
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> alter table demo1 add id1 int;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table demo1 add primary key(id1);
+ERROR 1138 (22004): Invalid use of NULL value
+mysql> create table if not exists demo1 (id int primary key, Name varchar(30), roll int);
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> create table if not exists demo1 (id int, Name varchar(30), roll int, primary key(id));
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> create table if not exists demo2 (id int primary key, Name varchar(30), roll int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from demo2;
+Empty set (0.01 sec)
+
+mysql> insert into demo2 values (10, 'Agni',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into demo2 values (10, 'Agni',80);
+ERROR 1062 (23000): Duplicate entry '10' for key 'demo2.PRIMARY'
+mysql> insert into demo2 values (10, 'Agni',80);
+ERROR 1062 (23000): Duplicate entry '10' for key 'demo2.PRIMARY'
+mysql> insert into demo2 values (20, 'Agni',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table if not exists demo3 (id int, Name varchar(30), roll int, constraint Iname primary key(id, Name));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc demo3;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| Name  | varchar(30) | NO   | PRI | NULL    |       |
+| roll  | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into demo3 values (20, 'Agni',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into demo3 values (20, 'Agni',80);
+ERROR 1062 (23000): Duplicate entry '20-Agni' for key 'demo3.PRIMARY'
+mysql> insert into demo3 values (30, 'Agni',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into demo3 values (30, 'Agni',80);
+ERROR 1062 (23000): Duplicate entry '30-Agni' for key 'demo3.PRIMARY'
+mysql> insert into demo3 values (30, 'Agnivesh',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into demo3 values (30, 'Manoj',80);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into demo3 values (30, 'Manoj',80);
+ERROR 1062 (23000): Duplicate entry '30-Manoj' for key 'demo3.PRIMARY'
+mysql> insert into demo3 values (40, 'Manoj',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table if not exists demo4 (id int AUTO_INCREMENT, Name varchar(30), roll int, constraint Iname primary key(id, Name));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc demo4;;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| id    | int         | NO   | PRI | NULL    | auto_increment |
+| Name  | varchar(30) | NO   | PRI | NULL    |                |
+| roll  | int         | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql> insert into demo4 values ('Manoj',80);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into demo4 (Name, roll) values ('Manoj',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo4;
++----+-------+------+
+| id | Name  | roll |
++----+-------+------+
+|  1 | Manoj |   80 |
++----+-------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into demo4 (Name, roll) values ('Manoj1',90);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo4;
++----+--------+------+
+| id | Name   | roll |
++----+--------+------+
+|  1 | Manoj  |   80 |
+|  2 | Manoj1 |   90 |
++----+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into demo4 values (80, 'Manoj',80);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo4;
++----+--------+------+
+| id | Name   | roll |
++----+--------+------+
+|  1 | Manoj  |   80 |
+|  2 | Manoj1 |   90 |
+| 80 | Manoj  |   80 |
++----+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into demo4 (Name, roll) values ('Manoj4',85);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from demo4;
++----+--------+------+
+| id | Name   | roll |
++----+--------+------+
+|  1 | Manoj  |   80 |
+|  2 | Manoj1 |   90 |
+| 80 | Manoj  |   80 |
+| 81 | Manoj4 |   85 |
++----+--------+------+
+4 rows in set (0.00 sec)

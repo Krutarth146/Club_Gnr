@@ -63,7 +63,7 @@ record = []
 while True:
     print("1 - Signup")
     print("2 - Login")
-    print("3 - DisplayCustomers")
+    print("3 - DisplayCustomers")~
     print("4 - Exit")
 
     choice = int(input("Enter Choice: "))
